@@ -22,7 +22,7 @@ module MoneyTree
 
     def valid?(eckey = nil)
       eckey ||= ec_key
-      eckey.nil? ? false : eckey.check_key
+      eckey ? eckey.check_key : false
     end
 
     def to_bytes
